@@ -1,0 +1,8 @@
+.cards__like-icon {
+  background-image: url(../../../images/like-icon.svg);
+  min-width: 22px;
+  min-height: 19px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

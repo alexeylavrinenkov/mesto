@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="page">
+  <header class="header">
+    <a class="link" href="#">
+      <img class="header__logo" src="./images/logo.svg" alt="Логотип Mesto">
+    </a>
+  </header>
+
+  <main class="content">
+    <section class="profile">
+      <div class="profile__container-avatar">
+        <img class="profile__avatar" src="./images/Avatar.png" alt="Фотография профиля">
+        <div class="profile__info">
+          <div class="profile__container-name">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <div class="profile__edit-button link"></div>
+          </div>
+          <p class="profile__work">Исследователь океана</p>
+        </div>
+      </div>
+      <div class="profile__add-button link"></div>
+    </section>
+    <section class="places">
+      <ul class="cards">
+        <li class="cards__card">
+          <img class="cards__img" src="./images/Peterhof.jpg" alt="Петергоф">
+          <div class="cards__container">
+            <h3 class="cards__title">Петергоф</h3>
+            <div class="cards__like-icon link"></div>
+          </div>
+        </li>
+        <li class="cards__card">
+          <img class="cards__img" src="./images/Altai.jpg" alt="Алтай">
+          <div class="cards__container">
+            <h3 class="cards__title">Алтай</h3>
+            <div class="cards__like-icon link"></div>
+          </div>
+        </li>
+        <li class="cards__card">
+          <img class="cards__img" src="./images/Cathedral of the Savior on Blood.jpg" alt="Собор Спас на Крови">
+          <div class="cards__container">
+            <h3 class="cards__title">Спас на Крови</h3>
+            <div class="cards__like-icon link"></div>
+          </div>
+        </li>
+        <li class="cards__card">
+          <img class="cards__img" src="./images/Kul Sharif Mosque.jpg" alt="Мечеть Кул-шариф">
+          <div class="cards__container">
+            <h3 class="cards__title">Кул-шариф</h3>
+            <div class="cards__like-icon link"></div>
+          </div>
+        </li>
+        <li class="cards__card">
+          <img class="cards__img" src="./images/Baikal.jpg" alt="Байкал">
+          <div class="cards__container">
+            <h3 class="cards__title">Озеро Байкал</h3>
+            <div class="cards__like-icon link"></div>
+          </div>
+        </li>
+        <li class="cards__card">
+          <img class="cards__img" src="./images/Sculpture Motherland.jpg" alt="Родина-мать">
+          <div class="cards__container">
+            <h3 class="cards__title">Родина-мать</h3>
+            <div class="cards__like-icon link"></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copyright">© 2022. Алексей Лавриненков</p>
+  </footer>
+
+  <form class="popup">
+    <div class="popup__close link"></div>
+    <div class="popup__container">
+      <h3 class="popup__title">Редактировать профиль</h3>
+      <input class="popup__text-input popup__text-input_type_name" type="text" placeholder="Введите ваше имя" value="Жак-Ив Кусто">
+      <input class="popup__text-input popup__text-input_type_work" type="text" placeholder="Введите ваш род деятельности" value="Исследователь океана">
+      <input class="popup__submit link" type="submit" value="Сохранить">
+    </div>
+  </form>
+
+  <script src="./scripts/popup.js"></script>
+</body>
+</html>
