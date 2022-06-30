@@ -23,4 +23,4 @@
 * Добавить светулю тему;
 * Добавить возможность смены языка на английский.
 
-Ссылка на проект: [Mesto](https://alexeylavrinenkov.github.io/project-mesto/ "Перейти")
+Ссылка на проект: [Mesto](https://alexeylavrinenkov.github.io/mesto/ "Перейти")
