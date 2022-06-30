@@ -1,8 +1,7 @@
 .cards__card {
-  border-radius: 20px;
   min-height: 361px;
   display: flex;
   flex-direction: column;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 15px;
 }

@@ -3,7 +3,7 @@
   min-height: 50px;
   background-color: black;
   border: none;
-  border-radius: 3px;
+  border-radius: 2px;
   color: white;
   margin: 48px auto 0;
   padding: 0;
@@ -13,6 +13,7 @@
 
 @media screen and (max-width: 500px) {
   .popup__submit {
+    min-height: 46px;
     margin: 45px auto 0;
     font-size: 14px;
   }
