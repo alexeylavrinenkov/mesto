@@ -30,48 +30,7 @@
     </section>
     <section class="places">
       <ul class="cards">
-        <li class="cards__card">
-          <img class="cards__img" src="./images/Peterhof.jpg" alt="Петергоф">
-          <div class="cards__container">
-            <h2 class="cards__title">Петергоф jhdskfhksdhksdjkfhsdjkfskjhjvksdvhsdjkdvdskjvs</h2>
-            <button class="cards__like-icon link" type="button"></button>
-          </div>
-        </li>
-        <li class="cards__card">
-          <img class="cards__img" src="./images/Altai.jpg" alt="Алтай">
-          <div class="cards__container">
-            <h2 class="cards__title">Алтай</h2>
-            <button class="cards__like-icon link" type="button"></button>
-          </div>
-        </li>
-        <li class="cards__card">
-          <img class="cards__img" src="./images/Cathedral-of-the-Savior-on-Blood.jpg" alt="Собор Спас на Крови">
-          <div class="cards__container">
-            <h2 class="cards__title">Спас на Крови</h2>
-            <button class="cards__like-icon link" type="button"></button>
-          </div>
-        </li>
-        <li class="cards__card">
-          <img class="cards__img" src="./images/Kul-Sharif-Mosque.jpg" alt="Мечеть Кул-шариф">
-          <div class="cards__container">
-            <h2 class="cards__title">Кул-шариф</h2>
-            <button class="cards__like-icon link" type="button"></button>
-          </div>
-        </li>
-        <li class="cards__card">
-          <img class="cards__img" src="./images/Baikal.jpg" alt="Озеро Байкал">
-          <div class="cards__container">
-            <h2 class="cards__title">Озеро Байкал</h2>
-            <button class="cards__like-icon link" type="button"></button>
-          </div>
-        </li>
-        <li class="cards__card">
-          <img class="cards__img" src="./images/Sculpture-Motherland.jpg" alt="Родина-мать">
-          <div class="cards__container">
-            <h2 class="cards__title">Родина-мать</h2>
-            <button class="cards__like-icon link" type="button"></button>
-          </div>
-        </li>
+
       </ul>
     </section>
   </main>
@@ -80,17 +39,40 @@
     <p class="footer__copyright">© 2022. Алексей Лавриненков</p>
   </footer>
 
-  <div class="popup">
-    <div class="popup__container">
-      <button class="popup__close link" type="button"></button>
-      <h3 class="popup__title">Редактировать профиль</h3>
-      <form class="popup__form" name="form">
-        <input class="popup__text-input popup__text-input_type_name" type="text" placeholder="Введите ваше имя" value="Жак-Ив Кусто" name="name">
-        <input class="popup__text-input popup__text-input_type_work" type="text" placeholder="Введите ваш род деятельности" value="Исследователь океана" name="work">
-        <input class="popup__submit link" type="submit" value="Сохранить">
-      </form>
+  <template id="card-template">
+    <li class="cards__card">
+      <img class="cards__img link">
+      <button class="cards__basket link" type="button"></button>
+      <div class="cards__container">
+        <h2 class="cards__title"></h2>
+        <button class="cards__like-icon link" type="button"></button>
+      </div>
+    </li>
+  </template>
+
+  <template id="popup-template">
+    <div class="popup">
+      <div class="popup__container">
+        <button class="popup__close link" type="button"></button>
+        <h3 class="popup__title"></h3>
+        <form class="popup__form" name="form">
+          <input class="popup__text-input popup__text-input_type_first" type="text">
+          <input class="popup__text-input popup__text-input_type_second" type="text">
+          <input class="popup__submit link" type="submit">
+        </form>
+      </div>
     </div>
-  </div>
+  </template>
+
+  <template id="popup-img-template">
+    <div class="popup">
+      <div class="popup__container-img">
+        <button class="popup__close link" type="button"></button>
+        <img class="popup__img">
+        <h3 class="popup__title-img"></h3>
+      </div>
+    </div>
+  </template>
 
   <script src="./scripts/index.js"></script>
 </body>
