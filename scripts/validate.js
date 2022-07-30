@@ -1,14 +1,3 @@
-// Содержит все селекторы и классы, необходимые для валидации форм
-const config = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__submit',
-  inactiveSubmitButtonClass: 'popup__submit_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__input-error_active',
-  hoverClass: 'link'
-};
-
 // Отображает ошибку у конкретного поля ввода
 const showInputError = (config, inputElement, errorElement, errorMessage) => {
   inputElement.classList.add(config.inputErrorClass);
@@ -91,6 +80,14 @@ const toggleButtonState = (config, inputList, submitButtonElement) => {
     makeButtonActive(config, submitButtonElement);
   }
 };
+
+// Функция для сброса ошибок и кнопки отправки формы попапа
+function resetPopup(config, inputList, submitButton) {
+  makeButtonInactive(config, submitButton);
+  inputList.forEach((input) => {
+    hideInputError(config, input, input.nextElementSibling);
+  });
+}
 
 enableValidation(config);
 

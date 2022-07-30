@@ -25,33 +25,6 @@ const imagePopupTitle = imagePopup.querySelector('.popup__title-img');
 const imagePopupImage = imagePopup.querySelector('.popup__img');
 const imagePopupCloseButton = imagePopup.querySelector('.popup__close');
 
-const initialCards = [
-  {
-    name: 'Петергоф',
-    link: './images/Peterhof.jpg'
-  },
-  {
-    name: 'Алтай',
-    link: './images/Altai.jpg'
-  },
-  {
-    name: 'Спас на Крови',
-    link: './images/Cathedral-of-the-Savior-on-Blood.jpg'
-  },
-  {
-    name: 'Кул-шариф',
-    link: './images/Kul-Sharif-Mosque.jpg'
-  },
-  {
-    name: 'Озеро Байкал',
-    link: './images/Baikal.jpg'
-  },
-  {
-    name: 'Родина-мать',
-    link: './images/Sculpture-Motherland.jpg'
-  }
-];
-
 
 
 // Функции
@@ -68,36 +41,28 @@ function closePopup(popup) {
   document.removeEventListener('keydown', closePopupByEsc);
 }
 
-// Функция для сброса ошибок и кнопки отправки формы попапа
-function resetPopup(config, inputList, submitButton) {
-  makeButtonInactive(config, submitButton);
-  inputList.forEach((input) => {
-    hideInputError(config, input, input.nextElementSibling);
-  });
-}
-
 // Функция открытия попапа для редактирования профиля
 function openProfilePopup() {
-  openPopup(profilePopup);
   profilePopupInputName.value = profileName.textContent;
   profilePopupInputWork.value = profileWork.textContent;
   resetPopup(config, [profilePopupInputName, profilePopupInputWork], profilePopupSubmitButton);
+  openPopup(profilePopup);
 }
 
 // Функция открытия попапа для добавления карточки
 function openCardPopup() {
-  openPopup(cardPopup);
   cardPopupInputTitle.value = '';
   cardPopupInputLink.value = '';
   resetPopup(config, [cardPopupInputTitle, cardPopupInputLink], cardPopupSubmitButton);
+  openPopup(cardPopup);
 }
 
 // Функция открытия попапа для просмотра карточек
 function openImagePopup(title, link) {
-  openPopup(imagePopup);
   imagePopupTitle.textContent = title;
   imagePopupImage.setAttribute('src', link);
   imagePopupImage.setAttribute('alt', title);
+  openPopup(imagePopup);
 }
 
 // Функция закрытия попапа для редактирования профиля
@@ -133,16 +98,16 @@ function closePopupByEsc(event) {
 // Функция для обработчика отправки формы попапа для заполнения профиля
 function submitProfilePopup(event) {
   event.preventDefault();
-  closePopup(profilePopup);
   profileName.textContent = profilePopupInputName.value;
   profileWork.textContent = profilePopupInputWork.value;
+  closePopup(profilePopup);
 };
 
 // Функция для обработчика отправки формы попапа для создания карточки
 function submitCardPopup(event) {
   event.preventDefault();
-  closePopup(cardPopup);
   renderCard(cardPopupInputTitle.value, cardPopupInputLink.value);
+  closePopup(cardPopup);
 };
 
 // Функция создания карточки

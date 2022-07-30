@@ -3,12 +3,13 @@
   font-weight: 400;
   max-width: 1280px;
   min-width: 320px;
+  min-height: 100vh;
   background-color: black;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: 45px 200px 60px;
   box-sizing: border-box;
+  padding: 45px 200px 60px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -25,7 +26,6 @@
 
 @media screen and (max-width: 920px) {
   .page {
-    padding: 0;
-    margin: 28px auto 36px;
+    padding: 28px 0 36px;
   }
 }

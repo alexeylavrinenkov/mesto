@@ -1,5 +1,6 @@
 .content {
   padding: 40px 0 65px;
+  flex-grow: 1;
 }
 
 @media screen and (max-width: 920px) {
