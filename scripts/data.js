@@ -1,5 +1,5 @@
-// Содержит все селекторы и классы, необходимые для валидации форм
-const config = {
+// Селекторы и классы для валидации форм
+const formConfig = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__submit',
@@ -7,6 +7,17 @@ const config = {
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__input-error_active',
   hoverClass: 'link'
+};
+
+// Селекторы и классы для создания карточки
+const cardConfig = {
+  templateSelector: '#card-template',
+  cardSelector: '.cards__card',
+  imageSelector: '.cards__img',
+  basketButtonSelector: '.cards__basket',
+  titleSelector: '.cards__title',
+  likeButtonSelector: '.cards__like-icon',
+  activeLikeButtonClass: 'cards__like-icon_active'
 };
 
 // Данные для создания начальных карточек
@@ -36,3 +47,5 @@ const initialCards = [
     link: './images/Sculpture-Motherland.jpg'
   }
 ];
+
+export { formConfig, cardConfig, initialCards };
