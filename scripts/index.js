@@ -6,6 +6,10 @@ import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 
 // Объявление и иницализация переменных
+
+// Список попапов
+const popupList = Array.from(document.querySelectorAll('.popup'));
+
 // Элементы из профиля
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileAddButton = document.querySelector('.profile__add-button');
@@ -17,14 +21,12 @@ const profilePopup = document.querySelector('.popup_type_profile');
 const profilePopupForm = profilePopup.querySelector('.popup__form');
 const profilePopupInputName = profilePopup.querySelector('.popup__input_type_name');
 const profilePopupInputWork = profilePopup.querySelector('.popup__input_type_work');
-const profilePopupCloseButton = profilePopup.querySelector('.popup__close');
 
 // Элементы из попапа для создания карточек
 const cardPopup = document.querySelector('.popup_type_card');
 const cardPopupForm = cardPopup.querySelector('.popup__form');
 const cardPopupInputTitle = cardPopup.querySelector('.popup__input_type_title');
 const cardPopupInputLink = cardPopup.querySelector('.popup__input_type_link');
-const cardPopupCloseButton = cardPopup.querySelector('.popup__close');
 
 // Контейнер для карточек
 const cardsContainer = document.querySelector('.cards');
@@ -33,7 +35,6 @@ const cardsContainer = document.querySelector('.cards');
 const imagePopup = document.querySelector('.popup_type_image');
 const imagePopupTitle = imagePopup.querySelector('.popup__title-img');
 const imagePopupImage = imagePopup.querySelector('.popup__img');
-const imagePopupCloseButton = imagePopup.querySelector('.popup__close');
 
 // Экземпляры форм
 const profileForm = new FormValidator(formConfig, profilePopupForm);
@@ -63,8 +64,7 @@ function openProfilePopup() {
 
 // Функция открытия попапа для добавления карточки
 function openCardPopup() {
-  cardPopupInputTitle.value = '';
-  cardPopupInputLink.value = '';
+  cardPopupForm.reset();
   cardForm.resetPopup();
   openPopup(cardPopup);
 }
@@ -75,28 +75,6 @@ function openImagePopup(title, link) {
   imagePopupImage.setAttribute('src', link);
   imagePopupImage.setAttribute('alt', title);
   openPopup(imagePopup);
-}
-
-// Функция закрытия попапа для редактирования профиля
-function closeProfilePopup() {
-  closePopup(profilePopup);
-}
-
-// Функция закрытия попапа для добавления карточек
-function closeCardPopup() {
-  closePopup(cardPopup);
-}
-
-// Функция закрытия попапа для просмотра карточек
-function closeImagePopup() {
-  closePopup(imagePopup);
-}
-
-// Функция закрытия попапа по оверлею
-function closePopupByOverlay(event) {
-  if (event.target === event.currentTarget) {
-    closePopup(event.currentTarget);
-  }
 }
 
 // Функция закрытия попапа при нажатии на Esc
@@ -136,25 +114,26 @@ function renderCard(containerElement, title, link) {
   containerElement.prepend(createCard(title, link));
 }
 
+// Функция установки слушателей закрытия попапа
+function setCloseEventListenersOnPopups() {
+  popupList.forEach(popupElement => {
+    popupElement.addEventListener('mousedown', (event) => {
+      if (event.target === event.currentTarget || event.target.classList.contains('popup__close')) {
+        closePopup(popupElement);
+      }
+    });
+  });
+}
+
 // Функция установки слушателей событий попапам
 function setEventListenersOnPopups() {
   profileEditButton.addEventListener('click', openProfilePopup);
   profileAddButton.addEventListener('click', openCardPopup);
 
-  profilePopupCloseButton.addEventListener('click', closeProfilePopup);
-  cardPopupCloseButton.addEventListener('click', closeCardPopup);
-  imagePopupCloseButton.addEventListener('click', closeImagePopup);
+  setCloseEventListenersOnPopups()
 
   profilePopupForm.addEventListener('submit', submitProfilePopup);
   cardPopupForm.addEventListener('submit', submitCardPopup);
-
-  profilePopup.addEventListener('click', closePopupByOverlay);
-  cardPopup.addEventListener('click', closePopupByOverlay);
-  imagePopup.addEventListener('click', closePopupByOverlay);
-
-  profilePopup.addEventListener('keydown', closePopupByEsc);
-  cardPopup.addEventListener('keydown', closePopupByEsc);
-  imagePopup.addEventListener('keydown', closePopupByEsc);
 }
 
 // Добавление начальных карточек в разметку

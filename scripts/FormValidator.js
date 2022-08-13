@@ -34,13 +34,15 @@ export default class FormValidator {
 
   // Устанавливает слушатели событий у всех полей ввода формы
   _setEventListeners() {
-    this._inputListElement = Array.from(this._formElement.querySelectorAll(this._inputSelector));
+    this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
 
-    this._inputListElement.forEach((inputElement) => {
+    this._inputList.forEach((inputElement) => {
+      const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
+
       this._makeButtonInactive();
 
       inputElement.addEventListener('input', () => {
-        this._checkInputValidity(inputElement, inputElement.nextElementSibling);
+        this._checkInputValidity(inputElement, errorElement);
         this._toggleButtonState();
       });
     });
@@ -48,7 +50,7 @@ export default class FormValidator {
 
   // Проверяет, есть ли невалидное поле ввода в форме
   _hasInvalidInput() {
-    return this._inputListElement.some((inputElement) => {
+    return this._inputList.some((inputElement) => {
       return !inputElement.validity.valid;
     });
   }
@@ -79,8 +81,10 @@ export default class FormValidator {
   // Функция для сброса ошибок и кнопки отправки формы попапа
   resetPopup() {
     this._makeButtonInactive();
-    this._inputListElement.forEach((inputElement) => {
-      this._hideInputError(inputElement, inputElement.nextElementSibling);
+    this._inputList.forEach((inputElement) => {
+      const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
+
+      this._hideInputError(inputElement, errorElement);
     });
   }
 
@@ -88,10 +92,6 @@ export default class FormValidator {
   enableValidation() {
     this._submitButtonElement = this._formElement.querySelector(this._submitButtonSelector);
 
-    this._formElement.addEventListener('submit', (evt) => {
-      evt.preventDefault();
-    });
-
-    this._setEventListeners(this._submitButtonElement);
+    this._setEventListeners();
   }
 }

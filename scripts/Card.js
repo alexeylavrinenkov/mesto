@@ -12,7 +12,7 @@ export default class Card {
     this._handleImageClick = openImagePopup;
   }
 
-  // Вовращает шаблон карточки
+  // Возвращает шаблон карточки
   _getTemplate() {
     this._cardElement = document
       .querySelector(this._templateSelector)
@@ -30,6 +30,7 @@ export default class Card {
   // Удаляет карточку
   _handleBasketClick() {
     this._view.remove();
+    this._view = null;
   }
 
   // Устанавливает слушатели событий
