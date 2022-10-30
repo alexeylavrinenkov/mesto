@@ -5,19 +5,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Место</title>
-  <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="page">
   <header class="header">
     <a class="link" href="#">
-      <img class="header__logo" src="./images/logo.svg" alt="Логотип Mesto">
+      <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип Mesto">
     </a>
   </header>
 
   <main class="content">
     <section class="profile">
       <div class="profile__container-avatar">
-        <img class="profile__avatar" src="./images/Avatar.png" alt="Фотография профиля">
+        <img class="profile__avatar" src="<%=require('./images/Avatar.png')%>" alt="Фотография профиля">
         <div class="profile__info">
           <div class="profile__container-name">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -70,7 +69,7 @@
   <div class="popup popup_type_image popup_background_dark">
     <div class="popup__container-img">
       <button class="popup__close link" type="button"></button>
-      <img class="popup__img" src="./images/Peterhof.jpg" alt="Петергоф">
+      <img class="popup__img" src="<%=require('./images/Peterhof.jpg')%>" alt="Петергоф">
       <h3 class="popup__title-img">Петергоф</h3>
     </div>
   </div>
@@ -85,7 +84,5 @@
       </div>
     </li>
   </template>
-  
-  <script type="module" src="./scripts/index.js"></script>
 </body>
 </html>
