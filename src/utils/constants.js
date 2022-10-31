@@ -12,6 +12,8 @@ const profileAddButton = document.querySelector('.profile__add-button');
 // Элементы из попапа для редактирования профиля
 const profilePopup = document.querySelector('.popup_type_profile');
 const profilePopupForm = profilePopup.querySelector('.popup__form');
+const profilePopupNameInput = profilePopup.querySelector('.popup__input_type_name');
+const profilePopupWorkInput = profilePopup.querySelector('.popup__input_type_work');
 
 // Элементы из попапа для создания карточек
 const cardPopup = document.querySelector('.popup_type_card');
@@ -71,5 +73,6 @@ export {
   formConfig, cardConfig,
   initialCards,
   profilePopupForm, cardPopupForm,
-  profileEditButton, profileAddButton
+  profileEditButton, profileAddButton,
+  profilePopupNameInput, profilePopupWorkInput
 };

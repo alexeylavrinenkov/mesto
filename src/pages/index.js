@@ -8,7 +8,9 @@ import {
   profilePopupForm,
   cardPopupForm,
   profileEditButton,
-  profileAddButton
+  profileAddButton,
+  profilePopupNameInput,
+  profilePopupWorkInput
 } from '../utils/constants.js';
 
 // Импорт классов
@@ -72,5 +74,10 @@ profilePopupWithForm.setEventListeners();
 cardPopupWithForm.setEventListeners();
 
 // Установка слушателей событий клика по кнопкам открытия попапов
-profileEditButton.addEventListener('click', profilePopupWithForm.open.bind(profilePopupWithForm));
+profileEditButton.addEventListener('click', () => {
+  const { name, work } = userInfo.getUserInfo();
+  profilePopupNameInput.value = name;
+  profilePopupWorkInput.value = work;
+  profilePopupWithForm.open.bind(profilePopupWithForm)();
+});
 profileAddButton.addEventListener('click', cardPopupWithForm.open.bind(cardPopupWithForm));
