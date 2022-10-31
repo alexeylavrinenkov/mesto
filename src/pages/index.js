@@ -29,8 +29,8 @@ const cardSection = new Section({
   }
 }, '.cards');
 
-const profileForm = new FormValidator(formConfig, profilePopupForm);
-const cardForm = new FormValidator(formConfig, cardPopupForm);
+const profileFormValidator = new FormValidator(formConfig, profilePopupForm);
+const cardFormValidator = new FormValidator(formConfig, cardPopupForm);
 
 const popupWithImage = new PopupWithImage('.popup_type_image');
 
@@ -39,14 +39,14 @@ const profilePopupWithForm = new PopupWithForm(
   ({ name, work }) => {
     userInfo.setUserInfo(name, work);
   },
-  profileForm.resetPopup.bind(profileForm)
+  profileFormValidator.resetPopup.bind(profileFormValidator)
 );
 const cardPopupWithForm = new PopupWithForm(
   '.popup_type_card',
   ({ title, link }) => {
     cardSection.addItem(createCard({ title, link }));
   },
-  cardForm.resetPopup.bind(cardForm)
+  cardFormValidator.resetPopup.bind(cardFormValidator)
 );
 
 const userInfo = new UserInfo({
@@ -62,8 +62,8 @@ const createCard = ({ title, link }) => {
 }
 
 // Добавление валидации формам
-profileForm.enableValidation();
-cardForm.enableValidation();
+profileFormValidator.enableValidation();
+cardFormValidator.enableValidation();
 
 // Добавление начальных карточек в разметку
 cardSection.renderItems();

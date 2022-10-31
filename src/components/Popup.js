@@ -20,7 +20,7 @@ export default class Popup {
   // Закрыть попап
   close() {
     this._popupElement.classList.remove('popup_opened');
-    document.addEventListener('keydown', this._handleEscClose);
+    document.removeEventListener('keydown', this._handleEscClose);
   }
 
   // Устанавливает слушатели событий
