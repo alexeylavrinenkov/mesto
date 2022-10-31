@@ -78,6 +78,6 @@ profileEditButton.addEventListener('click', () => {
   const { name, work } = userInfo.getUserInfo();
   profilePopupNameInput.value = name;
   profilePopupWorkInput.value = work;
-  profilePopupWithForm.open.bind(profilePopupWithForm)();
+  profilePopupWithForm.open();
 });
 profileAddButton.addEventListener('click', cardPopupWithForm.open.bind(cardPopupWithForm));
