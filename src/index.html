@@ -16,11 +16,11 @@
   <main class="content">
     <section class="profile">
       <div class="profile__container-avatar">
-        <img class="profile__avatar" alt="Фотография профиля">
+        <img class="profile__avatar" src="<%=require('./images/Black-Background.jpg')%>" alt="Фотография профиля">
         <button class="profile__avatar-edit-button link" type="button" name="avatar-edit-button"></button>
         <div class="profile__info">
           <div class="profile__container-name">
-            <h1 class="profile__name"></h1>
+            <h1 class="profile__name">...</h1>
             <button class="profile__edit-button link" type="button" name="edit-button"></button>
           </div>
           <p class="profile__work"></p>
@@ -44,7 +44,7 @@
       <button class="popup__close link" type="button"></button>
       <h3 class="popup__title">Обновить аватар</h3>
       <form class="popup__form" name="avatar" novalidate>
-        <input id="link-input" class="popup__input popup__input_type_link" type="url" name="link" placeholder="Ссылка на аватар" required>
+        <input id="avatar-link-input" class="popup__input popup__input_type_link" type="url" name="avatar-link" placeholder="Ссылка на аватар" required>
         <span class="popup__input-error link-input-error"></span>
         <button class="popup__submit link" type="submit">Сохранить</button>
       </form>
@@ -70,7 +70,7 @@
       <button class="popup__close link" type="button"></button>
       <h3 class="popup__title">Новое место</h3>
       <form class="popup__form" name="card" novalidate>
-        <input id="title-input" class="popup__input popup__input_type_title" type="text" name="name" placeholder="Название" minlength="2" maxlength="30" required>
+        <input id="title-input" class="popup__input popup__input_type_title" type="text" name="title" placeholder="Название" minlength="2" maxlength="30" required>
         <span class="popup__input-error title-input-error"></span>
         <input id="link-input" class="popup__input popup__input_type_link" type="url" name="link" placeholder="Ссылка на картинку" required>
         <span class="popup__input-error link-input-error"></span>
@@ -82,8 +82,8 @@
   <div class="popup popup_type_image popup_background_dark">
     <div class="popup__container-img">
       <button class="popup__close link" type="button"></button>
-      <img class="popup__img">
-      <h3 class="popup__title-img"></h3>
+      <img class="popup__img" src="<%=require('./images/Black-Background.jpg')%>" alt="Изображение из карточки">
+      <h3 class="popup__title-img">...</h3>
     </div>
   </div>
 
@@ -99,10 +99,10 @@
 
   <template id="card-template">
     <li class="cards__card">
-      <img class="cards__img link">
+      <img class="cards__img link" src="<%=require('./images/Black-Background.jpg')%>" alt="Изображение из карточки">
       <button class="cards__basket link" type="button"></button>
       <div class="cards__container">
-        <h2 class="cards__title"></h2>
+        <h2 class="cards__title">...</h2>
         <div class="cards__like-container">
           <button class="cards__like-icon link" type="button"></button>
           <span class="cards__like-counter">0</span>
