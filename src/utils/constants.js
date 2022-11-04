@@ -1,15 +1,11 @@
-import peterhofImage from './../images/Peterhof.jpg';
-import altaiImage from './../images/Altai.jpg';
-import sculptureMotheralndImage from './../images/Sculpture-Motherland.jpg';
-import kulSharifImage from './../images/Kul-Sharif-Mosque.jpg';
-import saviorOnBloodImage from './../images/Cathedral-of-the-Savior-on-Blood.jpg';
-import baikalImage from './../images/Baikal.jpg';
-
 // Элементы из профиля
+const profileAvatar = document.querySelector('.profile__avatar');
+const profileAvatarEditButton = document.querySelector('.profile__avatar-edit-button');
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileAddButton = document.querySelector('.profile__add-button');
 
 // Элементы из попапа для редактирования профиля
+const avatarPopupForm = document.querySelector('.popup_type_avatar');
 const profilePopup = document.querySelector('.popup_type_profile');
 const profilePopupForm = profilePopup.querySelector('.popup__form');
 const profilePopupNameInput = profilePopup.querySelector('.popup__input_type_name');
@@ -38,41 +34,13 @@ const cardConfig = {
   basketButtonSelector: '.cards__basket',
   titleSelector: '.cards__title',
   likeButtonSelector: '.cards__like-icon',
+  likeCounterSelector: '.cards__like-counter',
   activeLikeButtonClass: 'cards__like-icon_active'
 };
 
-// Данные для создания начальных карточек
-const initialCards = [
-  {
-    title: 'Петергоф',
-    link: peterhofImage
-  },
-  {
-    title: 'Алтай',
-    link: altaiImage
-  },
-  {
-    title: 'Спас на Крови',
-    link: saviorOnBloodImage
-  },
-  {
-    title: 'Кул-шариф',
-    link: kulSharifImage
-  },
-  {
-    title: 'Озеро Байкал',
-    link: baikalImage
-  },
-  {
-    title: 'Родина-мать',
-    link: sculptureMotheralndImage
-  }
-];
-
 export {
   formConfig, cardConfig,
-  initialCards,
-  profilePopupForm, cardPopupForm,
-  profileEditButton, profileAddButton,
+  avatarPopupForm, profilePopupForm, cardPopupForm,
+  profileAvatar, profileAvatarEditButton, profileEditButton, profileAddButton,
   profilePopupNameInput, profilePopupWorkInput
 };
