@@ -5,6 +5,7 @@ export default class PopupWithConfirmation extends Popup {
     super(popupSelector);
     this._formElement = this._popupElement.querySelector('.popup__form');
     this._submitButtonElement = this._formElement.querySelector('.popup__submit');
+    this._submitButtonText = this._submitButtonElement.textContent;
   }
 
   setHandleSubmit(handleSubmit) {
@@ -14,11 +15,19 @@ export default class PopupWithConfirmation extends Popup {
   _handleFormSubmit(event) {
     event.preventDefault();
     this._handleSubmit();
-    this.close();
   }
 
   setEventListeners() {
     super.setEventListeners();
     this._formElement.addEventListener('submit', this._handleFormSubmit.bind(this))
+  }
+
+  renderLoading(isLoading) {
+    if (isLoading) {
+      this._submitButtonElement.textContent = 'Удаление...';
+    }
+    else {
+      this._submitButtonElement.textContent = this._submitButtonText;
+    }
   }
 }

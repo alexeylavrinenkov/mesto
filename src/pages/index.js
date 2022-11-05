@@ -131,12 +131,17 @@ const createCard = (data) => {
     (cardId) => {
       popupWithConfirmation.open();
       popupWithConfirmation.setHandleSubmit(() => {
+        popupWithConfirmation.renderLoading(true);
         api.deleteCard(cardId)
           .then(() => {
             card.deleteCard();
+            popupWithConfirmation.close();
           })
           .catch((err) => {
             console.log(`Ошибка: ${err}`);
+          })
+          .finally(() => {
+            popupWithConfirmation.renderLoading(false);
           });
       });
     },
