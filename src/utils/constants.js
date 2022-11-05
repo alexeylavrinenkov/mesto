@@ -1,5 +1,4 @@
 // Элементы из профиля
-const profileAvatar = document.querySelector('.profile__avatar');
 const profileAvatarEditButton = document.querySelector('.profile__avatar-edit-button');
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileAddButton = document.querySelector('.profile__add-button');
@@ -41,6 +40,6 @@ const cardConfig = {
 export {
   formConfig, cardConfig,
   avatarPopupForm, profilePopupForm, cardPopupForm,
-  profileAvatar, profileAvatarEditButton, profileEditButton, profileAddButton,
+  profileAvatarEditButton, profileEditButton, profileAddButton,
   profilePopupNameInput, profilePopupWorkInput
 };

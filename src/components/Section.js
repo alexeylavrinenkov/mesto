@@ -11,8 +11,13 @@ export default class Section {
     })
   }
 
-  // Добавляет DOM-элемент в контейнер
-  addItem(element) {
+  // Добавляет DOM-элемент в конец контейнера
+  addItemToTheEnd(element) {
     this._containerElement.prepend(element);
+  }
+
+  // Добавляет DOM-элемент в начало контейнера
+  addItemToTheBeginning(element) {
+    this._containerElement.append(element);
   }
 }

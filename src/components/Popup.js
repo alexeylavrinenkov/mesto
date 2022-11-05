@@ -23,12 +23,14 @@ export default class Popup {
     document.removeEventListener('keydown', this._handleEscClose);
   }
 
+  _handlePopupMouseDown(event) {
+    if (event.target === event.currentTarget || event.target.classList.contains('popup__close')) {
+      this.close();
+    }
+  }
+
   // Устанавливает слушатели событий
   setEventListeners() {
-    this._popupElement.addEventListener('mousedown', (event) => {
-      if (event.target === event.currentTarget || event.target.classList.contains('popup__close')) {
-        this.close();
-      }
-    });
+    this._popupElement.addEventListener('mousedown', this._handlePopupMouseDown.bind(this));
   }
 }

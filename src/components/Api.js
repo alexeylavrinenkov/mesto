@@ -9,7 +9,7 @@ export default class Api {
       return res.json();
     }
 
-    return Promise.reject(`Ошибка 4: ${res.status}`)
+    return Promise.reject(`Ошибка 1: ${res.status}`)
   }
 
   getUserInfo() {
@@ -59,7 +59,7 @@ export default class Api {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        avatar: `${data.link}`
+        avatar: `${data.avatar}`
       })
     })
       .then((res) => {
