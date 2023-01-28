@@ -37,10 +37,10 @@ npm run dev
 * Вынести профиль в отдельную страницу
 * Вынести редактирование профиля, смену темы и т.д. в настройки
 
-## Другие мои учебные проекты из Яндекс Практикума
+## Другие учебные проекты из Яндекс Практикума
 1. [Научиться учиться](https://github.com/alexeylavrinenkov/how-to-learn)
 2. [Путешествие по России](https://github.com/alexeylavrinenkov/russian-travel)
-3. [Mesto (чистый JavaScript)] ⬅ текущий репозиторий
+3. Mesto (чистый JavaScript) ⬅ текущий репозиторий
 4. [Mesto (React)](https://github.com/alexeylavrinenkov/mesto-react)
 5. [Mesto (React, с авторизацией)](https://github.com/alexeylavrinenkov/react-mesto-auth)
 6. [Mesto (серверная часть)](https://github.com/alexeylavrinenkov/react-mesto-auth)
