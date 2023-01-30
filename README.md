@@ -43,4 +43,4 @@ npm run dev
 3. Mesto (чистый JavaScript) ⬅ текущий репозиторий
 4. [Mesto (React)](https://github.com/alexeylavrinenkov/mesto-react)
 5. [Mesto (React, с авторизацией)](https://github.com/alexeylavrinenkov/react-mesto-auth)
-6. [Mesto (серверная часть)](https://github.com/alexeylavrinenkov/react-mesto-auth)
+6. [Mesto (серверная часть)](https://github.com/alexeylavrinenkov/express-mesto-gha)
